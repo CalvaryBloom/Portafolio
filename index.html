@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Name - Programmer Portfolio</title>
+    <title>Borja Pardo Juanes - Portafolio</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -19,8 +19,8 @@
             <ul class="nav-links">
                 <li><a href="#about" class="nav-link">About</a></li>
                 <li><a href="#skills" class="nav-link">Skills</a></li>
-                <li><a href="#projects" class="nav-link">Projects</a></li>
-                <li><a href="#contact" class="nav-link">Contact</a></li>
+                <li><a href="#projects" class="nav-link">Proyectos</a></li>
+                <li><a href="#contact" class="nav-link">Contacto</a></li>
             </ul>
         </div>
     </nav>
@@ -35,28 +35,32 @@
     </div>
 
     <header class="hero">
-        <h1>Your Name</h1>
-        <p id="typewriter-subtitle"><span class="cursor"></span></p> {/* Subtitle for typewriter */}
+        <h1>Borja Pardo Juanes</h1>
+        <p id="typewriter-subtitle"><span class="cursor"></span></p> 
     </header>
 
     <main class="container">
 
         <!-- About Me Section -->
         <section id="about" class="panel-container section-padding">
-            <h2 class="glow-magenta">About Me</h2>
+            <h2 class="glow-magenta">Sobre mí</h2>
             <div class="panel">
                 <div class="about-content">
-                    <img src="profile.jpg" alt="Your Name - Profile Picture" class="profile-pic"> <!-- <<< YOUR PHOTO HERE -->
+                    <img src="download.jpg" alt="Your Name - Profile Picture" class="profile-pic"> <!-- <<< YOUR PHOTO HERE -->
                     <div class="about-text">
                         <p>
-                            Welcome! I'm [Your Name], a passionate programmer specializing in [Your Key Area, e.g., front-end development, backend systems, AI].
-                            I love crafting elegant solutions to complex problems and bringing ideas to life through code.
+                            ¡Bienvenido! Soy Borja Pardo Juanes, un desarrollador apasionado 
+                            por la programación y especializado en desarrollo back-end. 
+                            Me encanta dar vida a las ideas mediante el código y 
+                            me esfuerzo por encontrar soluciones elegantes a problemas complejos.
                         </p>
                         <p>
-                            With experience in [Mention 2-3 key technologies/skills, e.g., React, Node.js, Python], I enjoy building [Type of projects, e.g., interactive web applications, efficient APIs, machine learning models].
-                            Constantly learning and exploring new technologies to stay ahead in this ever-evolving field.
+                            Tengo experiencia con tecnologías como Java, PL/SQL, Docker, y 
+                            disfruto creando aplicaciones web interactivas. Siempre estoy aprendiendo y 
+                            explorando nuevas herramientas para mantenerme al día en 
+                            este campo en constante evolución.
                         </p>
-                         <p>Feel free to explore my projects and get in touch!</p>
+                         <p>Te invito a echar un vistazo a mis proyectos y no dudes en contactarme.</p>
                     </div>
                 </div>
             </div>
@@ -70,22 +74,20 @@
                     <li><span>HTML5</span></li>
                     <li><span>CSS3 & SCSS</span></li>
                     <li><span>JavaScript (ES6+)</span></li>
-                    <li><span>React / Vue / Angular</span></li> {/* Choose your framework(s) */}
-                    <li><span>Node.js</span></li>
-                    <li><span>Python / Java / C#</span></li> {/* Choose your backend langs */}
-                    <li><span>SQL & NoSQL DBs</span></li>
+                    <li><span>JavaFX</span></li>
+                    <li><span>Spring Boot</span></li>
+                    <li><span>Java / Phyton</span></li>
+                    <li><span>SQL & PL/SQL</span></li>
                     <li><span>Git & Version Control</span></li>
                     <li><span>API Design</span></li>
-                    <li><span>Cloud Platforms (AWS/Azure/GCP)</span></li>
                     <li><span>Docker</span></li>
-                     {/* Add more skills */}
                 </ul>
             </div>
         </section>
 
         <!-- Projects Section -->
         <section id="projects" class="panel-container section-padding">
-            <h2 class="glow-cyan">Projects</h2>
+            <h2 class="glow-cyan">Proyectos</h2>
             <div class="content-grid project-grid">
                 <!-- Project 1 -->
                 <article class="panel project-item">
@@ -113,25 +115,25 @@
 
         <!-- Contact Section -->
         <section id="contact" class="panel-container section-padding">
-             <h2 class="glow-cyan">Contact</h2>
+             <h2 class="glow-cyan">Contacto</h2>
              <div class="panel">
-                <p>Interested in collaborating? Send me a message!</p>
-                <form id="contact-form">
+                <p>¿Tienes un proyecto en mente? ¡Hablemos!</p>
+                <form id="contact-form" action="https://formspree.io/f/mdkggvel" method="POST">
                     <div class="form-group">
-                        <label for="name">Name:</label>
+                        <label for="name">Nombre:</label>
                         <input type="text" id="name" name="name" required>
                     </div>
                     <div class="form-group">
                         <label for="email">Email:</label>
-                        <input type="email" id="email" name="email" required>
+                        <input type="email" id="email" name="_replyto" required>
                     </div>
                      <div class="form-group">
-                        <label for="message">Message:</label>
+                        <label for="message">Mensaje:</label>
                         <textarea id="message" name="message" rows="4" required></textarea>
                     </div>
-                    <button type="submit" class="btn btn-submit">Send Message</button>
+                    <button type="submit" class="btn btn-submit">Enviar Mensaje</button>
                 </form>
-                 <p id="form-status"></p> {/* For feedback */}
+                 <p id="form-status"></p> 
              </div>
         </section>
 
@@ -140,12 +142,12 @@
     <footer>
         <!-- Social Links Section -->
         <div class="social-links">
-            <a href="https://github.com/yourusername" target="_blank" aria-label="GitHub Profile"><i class="fab fa-github"></i></a> <!-- <<< YOUR LINK -->
-            <a href="https://linkedin.com/in/yourusername" target="_blank" aria-label="LinkedIn Profile"><i class="fab fa-linkedin"></i></a> <!-- <<< YOUR LINK -->
-            <a href="https://instagram.com/yourusername" target="_blank" aria-label="Instagram Profile"><i class="fab fa-instagram"></i></a> <!-- <<< YOUR LINK -->
-            <a href="https://x.com/yourusername" target="_blank" aria-label="X (Twitter) Profile"><i class="fa-brands fa-x-twitter"></i></a> <!-- <<< YOUR LINK -->
+            <a href="https://github.com/eltitoborja" target="_blank" aria-label="GitHub Profile"><i class="fab fa-github"></i></a> <!-- <<< YOUR LINK -->
+            <a href="https://linkedin.com/in/borja-pardo-juanes-130973335/" target="_blank" aria-label="LinkedIn Profile"><i class="fab fa-linkedin"></i></a> <!-- <<< YOUR LINK -->
+            <a href="https://instagram.com/_borjiita/" target="_blank" aria-label="Instagram Profile"><i class="fab fa-instagram"></i></a> <!-- <<< YOUR LINK -->
+            <a href="https://x.com/borjaft99" target="_blank" aria-label="X (Twitter) Profile"><i class="fa-brands fa-x-twitter"></i></a> <!-- <<< YOUR LINK -->
         </div>
-        <p>© 2024 Your Name. All rights reserved.</p>
+        <p>© 2025 Borja Pardo Juanes. All rights reserved.</p>
     </footer>
 
     <script src="script.js"></script>

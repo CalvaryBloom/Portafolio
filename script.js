@@ -37,11 +37,11 @@ document.addEventListener('DOMContentLoaded', () => {
     const subtitleElement = document.getElementById('typewriter-subtitle');
     const cursorSpan = '<span class="cursor"></span>'; // Define cursor HTML
     const phrases = [
-        "Creative Programmer",
-        "Tech Enthusiast",
-        "Problem Solver",
-        "Web Developer",
-        "Lifelong Learner"
+        "Programador Creativo",
+        "Apasionado por la Tecnología",
+        "Innovador Digital",
+        "Desarrollador de aplicaciones web",
+        "En constante formación"
         // Add or modify phrases here
     ];
     let phraseIndex = 0;
@@ -100,40 +100,54 @@ document.addEventListener('DOMContentLoaded', () => {
     const contactForm = document.getElementById('contact-form');
     const formStatus = document.getElementById('form-status');
 
-    if (contactForm) {
-        contactForm.addEventListener('submit', (e) => {
+    if (contactForm && formStatus) { // Asegúrate de que ambos elementos existen
+        contactForm.addEventListener('submit', async (e) => {
             e.preventDefault(); // Prevent default page reload
 
-            // Basic feedback - In a real app, you'd send data via fetch() here
-            if(formStatus) {
-                formStatus.textContent = 'Sending message...';
-                formStatus.style.color = 'var(--cyan-glow)';
-            }
+            formStatus.textContent = 'Enviando mensaje...';
+            formStatus.style.color = 'var(--cyan-glow)';
+            const submitButton = contactForm.querySelector('button[type="submit"]');
+            if(submitButton) submitButton.disabled = true; // Disable button while sending
 
-            // Simulate network delay & form processing
-            setTimeout(() => {
-                // ------------------------------------------------------------
-                // !! IMPORTANT !!
-                // Replace this simulation with your actual form submission logic
-                // (e.g., using Fetch API to a backend or service like Formspree)
-                // See previous examples for Fetch structure.
-                // -------------------------------------------------------------
+            const formData = new FormData(contactForm);
+            const formAction = contactForm.getAttribute('action'); // Get action URL from form
 
-                // --- Simulation Code (Remove when implementing real submission) ---
-                console.log('Form submitted (simulated)');
-                 if (formStatus) {
-                    formStatus.textContent = 'Message Sent! Thank you.';
+            try {
+                const response = await fetch(formAction, {
+                    method: 'POST',
+                    body: formData,
+                    headers: {
+                        'Accept': 'application/json' // Important for Formspree to return JSON
+                    }
+                });
+
+                if (response.ok) { // Formspree returns 2xx status on success
+                    formStatus.textContent = '¡Mensaje enviado! Gracias.';
                     formStatus.style.color = 'var(--magenta-glow)';
-                 }
-                contactForm.reset(); // Clear the form
-                 // Clear status after a few seconds
-                 setTimeout(() => { if(formStatus) {formStatus.textContent = '';} }, 5000);
-                 // --- End Simulation Code ---
-
-            }, 1500);
+                    contactForm.reset(); // Clear the form
+                } else {
+                    // Handle server-side errors from Formspree (e.g., validation)
+                    const data = await response.json();
+                    if (data.errors && data.errors.length > 0) {
+                        formStatus.textContent = data.errors.map(error => error.message).join(', ');
+                    } else {
+                        formStatus.textContent = 'Oops! Algo ha ido mal. Por favor, inténtalo de nuevo.';
+                    }
+                    formStatus.style.color = 'red'; // Error color
+                }
+            } catch (error) {
+                // Handle network errors
+                console.error('Error sending form:', error);
+                formStatus.textContent = 'Error de conexión. Por favor, revisa tu conexión.';
+                formStatus.style.color = 'red';
+            } finally {
+                if(submitButton) submitButton.disabled = false; // Re-enable button
+                // Clear status after a few seconds
+                setTimeout(() => { formStatus.textContent = ''; }, 7000);
+            }
         });
     } else {
-         console.error("Contact form not found.");
+        console.error("Contact form or form status element not found.");
     }
 
     // --- Active Link Highlighting on Scroll ---
