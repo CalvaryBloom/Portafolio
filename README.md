@@ -1,4 +1,4 @@
-# Portafolio Interactivo de Desarrollador - Borja Pardo Juanes
+# Portafolio - Borja Pardo Juanes
 
 ![Vista previa del Portafolio](https://placehold.co/1200x600/121212/00FFA3?text=Portfolio+Showcase)
 
