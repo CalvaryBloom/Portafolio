@@ -1,87 +1,86 @@
-# Mi Portafolio Futurista de Programador
+Portafolio Interactivo de Desarrollador - Borja Pardo Juanes
+Este repositorio contiene el código fuente de mi portafolio personal, una página web interactiva y moderna de una sola página diseñada para mostrar mis proyectos, habilidades y experiencia como desarrollador de aplicaciones multiplataforma.
 
-¡Bienvenido a mi portafolio personal! Esta es una landing page interactiva y con un estilo futurista donde muestro mis proyectos, habilidades y cómo puedes contactarme.
+✨ Características Principales
+Diseño Moderno y Atractivo: Interfaz oscura con un degradado de violeta a verde menta que crea una estética tecnológica y elegante.
 
-![Captura de Pantalla del Portafolio](https://github.com/user-attachments/assets/45a0e0c3-c583-4cda-98b4-31f295bbbcc1)
+Fondo Animado Interactivo: Un fondo de partículas generadas con canvas que reaccionan al movimiento del cursor, creando una experiencia inmersiva.
 
+Animaciones y Micro-interacciones:
 
-## ✨ Características Principales
+Efecto Parallax sutil en las imágenes para añadir profundidad al hacer scroll.
 
-*   **Diseño Futurista y Animado:** Inspirado en interfaces de alta tecnología, con efectos de "paneles flotantes" y animaciones sutiles.
-*   **Menú de Navegación Fijo:** Para un fácil acceso a todas las secciones.
-*   **Sección "Sobre Mí":** Una breve introducción personal con mi foto.
-*   **Subtítulo Dinámico:** Con efecto de máquina de escribir mostrando diferentes facetas de mi perfil.
-*   **Sección de Habilidades:** Un vistazo rápido a las tecnologías y herramientas que domino.
-*   **Galería de Proyectos:** Muestra de mis trabajos más destacados con enlaces a demos en vivo y repositorios de GitHub.
-*   **Formulario de Contacto Funcional:** Integrado con [Formspree](https://formspree.io/) para que puedas enviarme un mensaje directamente.
-*   **Enlaces a Redes Sociales:** Conéctate conmigo en GitHub, LinkedIn, Instagram y X.
-*   **Efectos de Fondo:** Rejilla sutil, líneas de código fluyendo y partículas flotantes para ambientación.
-*   **Diseño Responsivo:** Adaptado para una buena visualización en diferentes tamaños de pantalla (escritorio, tablet, móvil).
+Efectos de "tilt" en las tarjetas de proyecto que reaccionan al cursor.
 
-## 🚀 Tecnologías Utilizadas
+Animaciones de entrada para las secciones que aparecen suavemente al desplazarse.
 
-*   **HTML5:** Para la estructura semántica del contenido.
-*   **CSS3:**
-    *   Variables CSS para una fácil personalización del tema.
-    *   Flexbox y Grid para el layout.
-    *   Animaciones y Transiciones CSS para efectos dinámicos.
-    *   `backdrop-filter` para efectos de "cristal esmerilado".
-    *   Pseudo-elementos para detalles de diseño.
-    *   Media Queries para el diseño responsivo.
-*   **JavaScript (Vanilla):**
-    *   Manipulación del DOM para efectos interactivos.
-    *   Efecto de máquina de escribir para el subtítulo.
-    *   Generación dinámica de partículas en el fondo.
-    *   Resaltado del enlace activo en el menú de navegación al hacer scroll.
-    *   Manejo del envío del formulario de contacto mediante `fetch` (AJAX) a Formspree.
-*   **Formspree:** Para la funcionalidad del backend del formulario de contacto.
-*   **Font Awesome:** Para los iconos de redes sociales.
-*   **Google Fonts:** Para las tipografías (`Orbitron` y `Roboto`).
+Secciones Claras y Completas:
 
-## 🛠️ Instalación y Uso Local
+Hero Section: Titular con animación de revelado de caracteres.
 
-Si deseas ejecutar este portafolio localmente:
+Proyectos: Galería de tarjetas con dos proyectos por fila para una mejor visualización en escritorio.
 
-1.  **Clona el repositorio (si está en GitHub):**
-    ```bash
-    git clone https://github.com/tu-usuario/tu-repositorio-portafolio.git
-    cd tu-repositorio-portafolio
-    ```
-2.  **Abre `index.html`:** Simplemente abre el archivo `index.html` en tu navegador web preferido.
+Habilidades: Sección visualmente atractiva con los logos de las tecnologías, organizadas por categorías (Frontend, Backend y Herramientas).
 
-**Personalización:**
+Sobre Mí y Contacto: Secciones claras y directas.
 
-*   **Información Personal:** Edita `index.html` para cambiar el nombre, la descripción, el texto "Sobre Mí", los proyectos, las habilidades y los enlaces a redes sociales.
-*   **Imágenes:**
-    *   Reemplaza `profile.jpg` con tu foto de perfil.
-    *   Reemplaza `placeholder-project.png` (o los nombres que uses) con las miniaturas de tus proyectos.
-*   **Formulario de Contacto:**
-    1.  Crea una cuenta en [Formspree.io](https://formspree.io/).
-    2.  Crea un nuevo formulario y obtén tu endpoint URL (ej. `https://formspree.io/f/TU_ID_UNICO`).
-    3.  Actualiza el atributo `action` de la etiqueta `<form>` en `index.html` con tu endpoint.
-    4.  Asegúrate de que el campo de email en el formulario tenga `name="_replyto"`.
-*   **Colores y Estilos:** Modifica las variables CSS en la sección `:root` de `styles.css` para cambiar el esquema de colores principal, fuentes, o la intensidad de los efectos de brillo.
-*   **Frases del Typewriter:** Edita el array `phrases` en `script.js` para cambiar el texto del subtítulo animado.
+Totalmente Funcional:
 
-## 🔮 Próximas Mejoras (Ideas)
+Formulario de Contacto: El botón "Enviar Mensaje" abre el cliente de correo por defecto del usuario con la información pre-rellenada (mailto:).
 
-*   [ ] Añadir un tema claro opcional.
-*   [ ] Implementar una carga más optimizada de imágenes.
-*   [ ] Integrar animaciones más complejas con librerías como GSAP.
-*   [ ] Expandir la sección de proyectos con más detalles o modales.
-*   [ ] Añadir internacionalización (i18n) si fuera necesario.
+Descarga de CV: Botón funcional para descargar un archivo de texto con la información del CV.
 
-## 🤝 Contribuciones
+Diseño Responsivo: Adaptado para una correcta visualización en dispositivos móviles, tablets y escritorio.
 
-Si bien este es un portafolio personal, si encuentras algún error o tienes alguna sugerencia de mejora, ¡no dudes en abrir un *issue* o un *pull request*!
+🚀 Tecnologías Utilizadas
+HTML5: Estructura semántica del contenido.
 
-## 📄 Licencia
+CSS3 (con Tailwind CSS): Diseño y estilos modernos. Se utilizan variables CSS para una fácil personalización del tema.
 
-Este proyecto es de código abierto y está disponible bajo la [Licencia MIT](LICENSE.md).
+JavaScript (Vanilla JS): Para toda la interactividad, incluyendo:
 
----
+Animación del canvas de partículas.
 
-¡Gracias por visitar mi portafolio! Espero que te guste.
+Lógica del menú móvil.
 
-**Borja Pardo Juanes**
-[[Enlace a mi LinkedIn](https://www.linkedin.com/in/borja-pardo-juanes-130973335/) | [[Enlace a mi GitHub](https://github.com/eltitoborja/)]
+Animaciones de scroll.
+
+Funcionalidad del formulario de contacto y descarga de CV.
+
+⚙️ Cómo Empezar
+Este es un proyecto de sitio web estático. No requiere dependencias ni un proceso de compilación.
+
+Clona este repositorio:
+
+git clone https://github.com/tu-usuario/tu-repositorio.git
+
+Abre el archivo index.html en tu navegador web preferido.
+
+🔧 Personalización
+Puedes personalizar fácilmente los aspectos clave del portafolio editando el archivo index.html:
+
+Información de Contacto:
+
+Para cambiar el email de destino del formulario, busca la línea mailto:borjap99@gmail.com en el script y reemplázala con tu correo.
+
+Contenido del CV:
+
+Busca la constante cvContent en el script y edita el texto para que coincida con tu CV.
+
+Proyectos y Habilidades:
+
+El contenido de los proyectos y las habilidades está directamente en el HTML. Puedes modificar los títulos, descripciones, imágenes y logos editando las secciones correspondientes.
+
+Esquema de Color:
+
+Para cambiar el degradado de color, modifica las variables CSS en la sección <style> de la cabecera:
+
+:root {
+    --accent-start: #7F00FF; /* Color de inicio del degradado */
+    --accent-end: #00FFA3;   /* Color de fin del degradado */
+}
+
+📄 Licencia
+Este proyecto está bajo la Licencia MIT. Consulta el archivo LICENSE para más detalles.
+
+¡Gracias por visitar mi portafolio! Si tienes alguna pregunta o sugerencia, no dudes en contactarme.
