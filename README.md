@@ -1,6 +1,6 @@
 # Portafolio - Borja Pardo Juanes
 
-![Vista previa del Portafolio](https://placehold.co/1200x600/121212/00FFA3?text=Portfolio+Showcase)
+![Vista previa del Portafolio](Captura de pantalla 2025-07-01 125832.png)
 
 ### [➡️ Ver Demo en Vivo ⬅️](https://eltitoborja.github.io/Portafolio/)
 
