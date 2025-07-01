@@ -1,6 +1,6 @@
 # Portafolio - Borja Pardo Juanes
 
-![Vista previa del Portafolio](Captura de pantalla 2025-07-01 125832.png)
+![Vista previa del Portafolio](https://github.com/eltitoborja/Portafolio/blob/main/Captura%20de%20pantalla%202025-07-01%20125832.png?raw=true)
 
 ### [➡️ Ver Demo en Vivo ⬅️](https://eltitoborja.github.io/Portafolio/)
 
