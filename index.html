@@ -1,155 +1,239 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Borja Pardo Juanes - Portafolio</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Borja Pardo Juanes - Desarrollador Multiplataforma</title>
+   
+    <script src="https://cdn.tailwindcss.com"></script>
+   
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&family=Roboto:wght@300;400&display=swap" rel="stylesheet">
-    <!-- Font Awesome CDN for Social Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+   
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <canvas id="bg-canvas"></canvas>
+    <div id="aurora-effect"></div>
 
-    <!-- Navigation Menu Start -->
-    <nav class="navbar">
-        <div class="nav-container">
-            <ul class="nav-links">
-                <li><a href="#about" class="nav-link">About</a></li>
-                <li><a href="#skills" class="nav-link">Skills</a></li>
-                <li><a href="#projects" class="nav-link">Proyectos</a></li>
-                <li><a href="#contact" class="nav-link">Contacto</a></li>
-            </ul>
+    <header id="main-header" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-transparent backdrop-blur-md">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#home" class="text-xl font-bold tracking-wider hover:text-white transition-colors duration-300">BPJ</a>
+            <nav class="hidden md:flex space-x-6 items-center">
+                <a href="#projects" class="hover:text-white transition-colors">Proyectos</a>
+                <a href="#skills" class="hover:text-white transition-colors">Habilidades</a>
+                <a href="#about" class="hover:text-white transition-colors">Sobre Mí</a>
+                <a href="#contact" class="hover:text-white transition-colors">Contacto</a>
+                <a href="Currículum Borja Pardo.pdf" download="CV-Borja Pardo Juanes.pdf" class="text-white font-semibold px-4 py-2 rounded-md transform transition-transform duration-300 btn-gradient">Descargar CV</a>
+            </nav>
+            <button id="mobile-menu-button" class="md:hidden focus:outline-none text-white">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+            </button>
         </div>
-    </nav>
-    <!-- Navigation Menu End -->
-
-
-    <!-- Background Effects -->
-    <div class="background-effects">
-        <div class="grid-overlay"></div>
-        <div class="code-lines"></div>
-        <!-- Particles will be added by JS -->
-    </div>
-
-    <header class="hero">
-        <h1>Borja Pardo Juanes</h1>
-        <p id="typewriter-subtitle"><span class="cursor"></span></p> 
+        <div id="mobile-menu" class="hidden md:hidden px-6 pb-4 bg-black/20 backdrop-blur-md">
+            <a href="#projects" class="block py-2 hover:text-white transition-colors">Proyectos</a>
+            <a href="#skills" class="block py-2 hover:text-white transition-colors">Habilidades</a>
+            <a href="#about" class="block py-2 hover:text-white transition-colors">Sobre Mí</a>
+            <a href="#contact" class="block py-2 hover:text-white transition-colors">Contacto</a>
+            <a href="Currículum Borja Pardo.pdf" download="CV-Borja Pardo Juanes.pdf" class="block mt-4 text-white font-semibold px-4 py-2 rounded-md text-center btn-gradient">Descargar CV</a>
+        </div>
     </header>
 
-    <main class="container">
+    <main>
+        <section id="home" class="h-screen w-full flex flex-col items-center justify-center text-center relative overflow-hidden scroll-target">
+            <div class="relative z-10 px-4">
+                <h1 class="text-5xl md:text-7xl font-black tracking-tight text-white mb-4 hero-title"></h1>
+                <p class="text-lg md:text-xl max-w-3xl mx-auto mb-8 fade-in-section" style="transition-delay: 500ms;">Desarrollador de Aplicaciones Multiplataforma. Construyo <span class="accent-color">soluciones intuitivas</span> para iOS, Android y la Web.</p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center fade-in-section" style="transition-delay: 700ms;">
+                    <a href="#projects" class="text-white font-semibold px-8 py-3 rounded-lg transform transition-transform duration-300 btn-gradient">Ver mis Proyectos</a>
+                    <a href="#contact" class="bg-gray-700/50 border border-gray-600 text-white font-semibold px-8 py-3 rounded-lg hover:bg-gray-700 transition-colors">Contactar</a>
+                </div>
+            </div>
+        </section>
 
-        <!-- About Me Section -->
-        <section id="about" class="panel-container section-padding">
-            <h2 class="glow-magenta">Sobre mí</h2>
-            <div class="panel">
-                <div class="about-content">
-                    <img src="images/download.jpg" alt="Your Name - Profile Picture" class="profile-pic"> <!-- <<< YOUR PHOTO HERE -->
-                    <div class="about-text">
-                        <p>
-                            ¡Bienvenido! Soy Borja Pardo Juanes, un desarrollador apasionado 
-                            por la programación y especializado en desarrollo back-end. 
-                            Me encanta dar vida a las ideas mediante el código y 
-                            me esfuerzo por encontrar soluciones elegantes a problemas complejos.
-                        </p>
-                        <p>
-                            Tengo experiencia con tecnologías como Java, PL/SQL, Docker, y 
-                            disfruto creando aplicaciones web interactivas. Siempre estoy aprendiendo y 
-                            explorando nuevas herramientas para mantenerme al día en 
-                            este campo en constante evolución.
-                        </p>
-                         <p>Te invito a echar un vistazo a mis proyectos y no dudes en contactarme.</p>
+        <section id="projects" class="py-20 md:py-32 bg-transparent scroll-target">
+             <div class="container mx-auto px-6">
+                <div class="text-center mb-12 fade-in-section">
+                    <h2 class="text-4xl font-bold text-white">Proyectos Destacados</h2>
+                    <p class="text-lg mt-2">Una selección de mi trabajo más reciente.</p>
+                </div>
+
+                <div class="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8" style="perspective: 1000px;">
+                    <div class="bg-gray-800/50 backdrop-blur-sm border border-gray-700/50 rounded-xl overflow-hidden group transition-all duration-300 fade-in-section card-tilt">
+                        <div class="overflow-hidden rounded-t-xl">
+                             <img src="images/PetSafe.png" alt="Mockup de la aplicación FinTrack" class="w-full h-auto group-hover:scale-105 transition-transform duration-500 parallax-element">
+                        </div>
+                        <div class="relative p-6">
+                            <div class="absolute top-0 right-6 -mt-8 btn-gradient p-3 rounded-full shadow-lg group-hover:scale-110 transition-transform">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z" /></svg>
+                            </div>
+                            <h3 class="text-xl font-bold text-white mt-4">PetSafe - Seguimiento de Mascotas</h3>
+                            <p class="mt-2 text-gray-400">App para el seguimiento de mascotas perdidas y encontradas.</p>
+                            <div class="mt-4 flex flex-wrap gap-2">
+                                <span class="bg-emerald-900/50 text-emerald-300 text-xs font-medium px-2.5 py-1 rounded-full">Java</span>
+                                <span class="bg-yellow-900/50 text-yellow-300 text-xs font-medium px-2.5 py-1 rounded-full">JavaScript</span>
+                            </div>
+                            <a href="https://github.com/eltitoborja/PetSafe" target="_blank" rel="noopener noreferrer" class="block text-center mt-6 w-full bg-transparent border border-emerald-500 text-emerald-400 font-semibold py-2 rounded-lg hover:bg-emerald-500 hover:text-white transition-colors">
+                                Ver Repositorio
+                            </a>
+                        </div>
+                    </div>
+                    <div class="bg-gray-800/50 backdrop-blur-sm border border-gray-700/50 rounded-xl overflow-hidden group transition-all duration-300 fade-in-section card-tilt" style="transition-delay: 100ms;">
+                        <div class="overflow-hidden rounded-t-xl">
+                             <img src="images/alzimaticc.png" alt="Mockup de la aplicación EventHive" class="w-full h-auto group-hover:scale-105 transition-transform duration-500 parallax-element">
+                        </div>
+                        <div class="relative p-6">
+                            <div class="absolute top-0 right-6 -mt-8 btn-gradient p-3 rounded-full shadow-lg group-hover:scale-110 transition-transform">
+                               <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" /></svg>
+                            </div>
+                            <h3 class="text-xl font-bold text-white mt-4">Gestión Averías Alzimatic - Web App</h3>
+                            <p class="mt-2 text-gray-400">Web app para la gestión de averías de equipos de Alzimatic.</p>
+                            <div class="mt-4 flex flex-wrap gap-2">
+                               <span class="bg-gray-700 text-gray-300 text-xs font-medium px-2.5 py-1 rounded-full">JavaScript</span>
+                               <span class="bg-purple-900/50 text-purple-300 text-xs font-medium px-2.5 py-1 rounded-full">Html</span>
+                            </div>
+                            <a href="https://github.com/eltitoborja/gestionAveriasAlzimatic" target="_blank" rel="noopener noreferrer" class="block text-center mt-6 w-full bg-transparent border border-emerald-500 text-emerald-400 font-semibold py-2 rounded-lg hover:bg-emerald-500 hover:text-white transition-colors">
+                                Ver Repositorio
+                            </a>
+                        </div>
+                    </div>
+                    <!-- 
+                    <div class="bg-gray-800/50 backdrop-blur-sm border border-gray-700/50 rounded-xl overflow-hidden group transition-all duration-300 fade-in-section card-tilt" style="transition-delay: 200ms;">
+                        <div class="overflow-hidden rounded-t-xl">
+                             <img src="https://placehold.co/600x400/1a1a1a/00FFA3?text=Web+App+Mockup" alt="Mockup de la aplicación CodeLab" class="w-full h-auto group-hover:scale-105 transition-transform duration-500 parallax-element">
+                        </div>
+                        <div class="relative p-6">
+                            <div class="absolute top-0 right-6 -mt-8 btn-gradient p-3 rounded-full shadow-lg group-hover:scale-110 transition-transform">
+                               <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" /></svg>
+                            </div>
+                            <h3 class="text-xl font-bold text-white mt-4">CodeLab - Plataforma Educativa</h3>
+                            <p class="mt-2 text-gray-400">Web app interactiva para aprender a programar en tiempo real.</p>
+                            <div class="mt-4 flex flex-wrap gap-2">
+                               <span class="bg-cyan-900/50 text-cyan-300 text-xs font-medium px-2.5 py-1 rounded-full">React</span>
+                               <span class="bg-indigo-900/50 text-indigo-300 text-xs font-medium px-2.5 py-1 rounded-full">Docker</span>
+                            </div>
+                            <button onclick="openModal('CodeLab')" class="mt-6 w-full bg-transparent border border-emerald-500 text-emerald-400 font-semibold py-2 rounded-lg hover:bg-emerald-500 hover:text-white transition-colors">Ver Caso</button>
+                        </div>
+                    </div> 
+                    -->
+                </div>
+            </div>
+        </section>
+       
+        <section id="about" class="py-20 md:py-32 scroll-target">
+             <div class="container mx-auto px-6">
+                <div class="grid grid-cols-1 md:grid-cols-5 gap-12 items-center fade-in-section">
+                    <div class="md:col-span-2">
+                       <div class="rounded-xl overflow-hidden">
+                            <img src="images/download.jpg" alt="Fotografía profesional de Borja Pardo Juanes" class="w-full max-w-sm mx-auto shadow-2xl shadow-emerald-500/10 parallax-element">
+                       </div>
+                    </div>
+                    <div class="md:col-span-3">
+                        <h2 class="text-4xl font-bold text-white mb-4">Mi filosofía: código y creatividad.</h2>
+                        <p class="text-lg mb-4">Soy un apasionado desarrollador con un objetivo claro: transformar ideas complejas en experiencias de usuario elegantes, eficientes y memorables. Mi enfoque combina un código robusto y escalable con un diseño centrado en las personas.</p>
+                    </div>
+                </div>
+               
+                <div id="skills" class="mt-20 text-center fade-in-section scroll-target">
+                    <h2 class="text-3xl font-bold text-white mb-12">Mi Stack Tecnológico</h2>
+                    <div class="max-w-6xl mx-auto">
+                        <div class="space-y-16">
+                            <div class="fade-in-section" style="transition-delay: 100ms;">
+                                <h3 class="text-2xl font-bold text-white mb-6 border-b-2 border-emerald-500/30 pb-3">Frontend</h3>
+                                <div class="flex flex-wrap justify-center items-center gap-8 mt-6">
+                                   <div class="flex flex-col items-center justify-center gap-2 p-4 w-24 rounded-lg transition-all duration-300 hover:bg-white/5 hover:scale-105"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flutter/flutter-original.svg" alt="Flutter logo" class="h-12 w-12"><span class="text-sm">Flutter</span></div>
+                                   <div class="flex flex-col items-center justify-center gap-2 p-4 w-24 rounded-lg transition-all duration-300 hover:bg-white/5 hover:scale-105"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="React logo" class="h-12 w-12"><span class="text-sm">React</span></div>
+                                   <div class="flex flex-col items-center justify-center gap-2 p-4 w-24 rounded-lg transition-all duration-300 hover:bg-white/5 hover:scale-105"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/swift/swift-original.svg" alt="Swift logo" class="h-12 w-12"><span class="text-sm">SwiftUI</span></div>
+                                   <div class="flex flex-col items-center justify-center gap-2 p-4 w-24 rounded-lg transition-all duration-300 hover:bg-white/5 hover:scale-105"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript logo" class="h-12 w-12"><span class="text-sm">JavaScript</span></div>
+                                   <div class="flex flex-col items-center justify-center gap-2 p-4 w-24 rounded-lg transition-all duration-300 hover:bg-white/5 hover:scale-105"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tailwindcss/tailwindcss-original.svg" alt="TailwindCSS logo" class="h-12 w-12"><span class="text-sm">Tailwind</span></div>
+                                   <div class="flex flex-col items-center justify-center gap-2 p-4 w-24 rounded-lg transition-all duration-300 hover:bg-white/5 hover:scale-105"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML5 logo" class="h-12 w-12"><span class="text-sm">HTML5</span></div>
+                                   <div class="flex flex-col items-center justify-center gap-2 p-4 w-24 rounded-lg transition-all duration-300 hover:bg-white/5 hover:scale-105"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS3 logo" class="h-12 w-12"><span class="text-sm">CSS3</span></div>
+                                   <div class="flex flex-col items-center justify-center gap-2 p-4 w-24 rounded-lg transition-all duration-300 hover:bg-white/5 hover:scale-105"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jest/jest-plain.svg" alt="Jest logo" class="h-12 w-12"><span class="text-sm">Jest</span></div>
+                                </div>
+                            </div>
+
+                            <div class="fade-in-section" style="transition-delay: 200ms;">
+                                <h3 class="text-2xl font-bold text-white mb-6 border-b-2 border-emerald-500/30 pb-3">Backend</h3>
+                                 <div class="flex flex-wrap justify-center items-center gap-8 mt-6">
+                                   <div class="flex flex-col items-center justify-center gap-2 p-4 w-24 rounded-lg transition-all duration-300 hover:bg-white/5 hover:scale-105"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" alt="Java logo" class="h-12 w-12"><span class="text-sm">Java</span></div>
+                                   <div class="flex flex-col items-center justify-center gap-2 p-4 w-24 rounded-lg transition-all duration-300 hover:bg-white/5 hover:scale-105"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/csharp/csharp-original.svg" alt="C# logo" class="h-12 w-12"><span class="text-sm">C#</span></div>
+                                   <div class="flex flex-col items-center justify-center gap-2 p-4 w-24 rounded-lg transition-all duration-300 hover:bg-white/5 hover:scale-105"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/spring/spring-original.svg" alt="Spring Boot logo" class="h-12 w-12"><span class="text-sm">Spring Boot</span></div>
+                                   <div class="flex flex-col items-center justify-center gap-2 p-4 w-24 rounded-lg transition-all duration-300 hover:bg-white/5 hover:scale-105"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg" alt="PHP logo" class="h-12 w-12"><span class="text-sm">PHP</span></div>
+                                   <div class="flex flex-col items-center justify-center gap-2 p-4 w-24 rounded-lg transition-all duration-300 hover:bg-white/5 hover:scale-105"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" alt="Node.js logo" class="h-12 w-12"><span class="text-sm">Node.js</span></div>
+                                   <div class="flex flex-col items-center justify-center gap-2 p-4 w-24 rounded-lg transition-all duration-300 hover:bg-white/5 hover:scale-105"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-plain.svg" alt="Firebase logo" class="h-12 w-12"><span class="text-sm">Firebase</span></div>
+                                   <div class="flex flex-col items-center justify-center gap-2 p-4 w-24 rounded-lg transition-all duration-300 hover:bg-white/5 hover:scale-105"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" alt="MySQL logo" class="h-12 w-12"><span class="text-sm">MySQL</span></div>
+                                   <div class="flex flex-col items-center justify-center gap-2 p-4 w-24 rounded-lg transition-all duration-300 hover:bg-white/5 hover:scale-105"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" alt="MongoDB logo" class="h-12 w-12"><span class="text-sm">MongoDB</span></div>
+                                   <div class="flex flex-col items-center justify-center gap-2 p-4 w-24 rounded-lg transition-all duration-300 hover:bg-white/5 hover:scale-105"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/graphql/graphql-plain.svg" alt="GraphQL logo" class="h-12 w-12"><span class="text-sm">GraphQL</span></div>
+                                </div>
+                            </div>
+
+                            <div class="fade-in-section" style="transition-delay: 300ms;">
+                                <h3 class="text-2xl font-bold text-white mb-6 border-b-2 border-emerald-500/30 pb-3">Herramientas</h3>
+                                 <div class="flex flex-wrap justify-center items-center gap-8 mt-6">
+                                   <div class="flex flex-col items-center justify-center gap-2 p-4 w-24 rounded-lg transition-all duration-300 hover:bg-white/5 hover:scale-105"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/amazonwebservices/amazonwebservices-plain-wordmark.svg" alt="AWS logo" class="h-12 w-12" style="filter: invert(1)"><span class="text-sm">AWS</span></div>
+                                   <div class="flex flex-col items-center justify-center gap-2 p-4 w-24 rounded-lg transition-all duration-300 hover:bg-white/5 hover:scale-105"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" alt="Docker logo" class="h-12 w-12"><span class="text-sm">Docker</span></div>
+                                   <div class="flex flex-col items-center justify-center gap-2 p-4 w-24 rounded-lg transition-all duration-300 hover:bg-white/5 hover:scale-105"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bash/bash-original.svg" alt="Bash logo" class="h-12 w-12"><span class="text-sm">Bash</span></div>
+                                   <div class="flex flex-col items-center justify-center gap-2 p-4 w-24 rounded-lg transition-all duration-300 hover:bg-white/5 hover:scale-105"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="Git logo" class="h-12 w-12"><span class="text-sm">Git</span></div>
+                                   <div class="flex flex-col items-center justify-center gap-2 p-4 w-24 rounded-lg transition-all duration-300 hover:bg-white/5 hover:scale-105"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg" alt="Figma logo" class="h-12 w-12"><span class="text-sm">Figma</span></div>
+                                   <div class="flex flex-col items-center justify-center gap-2 p-4 w-24 rounded-lg transition-all duration-300 hover:bg-white/5 hover:scale-105"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/trello/trello-plain.svg" alt="Trello logo" class="h-12 w-12"><span class="text-sm">Trello</span></div>
+                                   <div class="flex flex-col items-center justify-center gap-2 p-4 w-24 rounded-lg transition-all duration-300 hover:bg-white/5 hover:scale-105">
+                                       <svg class="h-12 w-12 mx-auto text-gray-400 group-hover:text-white transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 15.2V8.8C3 7.11984 3 6.27976 3.32698 5.63803C3.6146 5.07354 4.07354 4.6146 4.63803 4.32698C5.27976 4 6.11984 4 7.8 4H16.2C17.8802 4 18.7202 4 19.362 4.32698C19.9265 4.6146 20.3854 5.07354 20.673 5.63803C21 6.27976 21 7.11984 21 8.8V15.2C21 16.8802 21 17.7202 20.673 18.362C20.3854 18.9265 19.9265 19.3854 19.362 19.673C18.7202 20 17.8802 20 16.2 20H7.8C6.11984 20 5.27976 20 4.63803 19.673C4.07354 19.3854 3.6146 18.9265 3.32698 18.362C3 17.7202 3 16.8802 3 15.2Z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9.5 4V2.5"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M14.5 4V2.5"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 9.5H21"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 14.5H21"></path></svg>
+                                       <span class="text-sm">UML</span>
+                                   </div>
+                                 </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Skills Section -->
-        <section id="skills" class="panel-container section-padding">
-            <h2 class="glow-magenta">Skills</h2>
-            <div class="panel">
-                <ul class="skills-list">
-                    <li><span>HTML5</span></li>
-                    <li><span>CSS3 & SCSS</span></li>
-                    <li><span>JavaScript (ES6+)</span></li>
-                    <li><span>Swing</span></li>
-                    <li><span>JavaFX</span></li>
-                    <li><span>Spring Boot</span></li>
-                    <li><span>Java / Phyton</span></li>
-                    <li><span>SQL & PL/SQL</span></li>
-                    <li><span>Git & Version Control</span></li>
-                    <li><span>API Design</span></li>
-                    <li><span>Docker</span></li>
-                </ul>
+        <section id="contact" class="py-20 md:py-32 bg-transparent scroll-target">
+             <div class="container mx-auto px-6 text-center">
+                <div class="max-w-2xl mx-auto fade-in-section">
+                    <h2 class="text-4xl font-bold text-white">¿Tienes una idea?</h2>
+                    <p class="text-2xl accent-color mt-1 mb-8">Hablemos.</p>
+                   
+                    <form id="contact-form" action="https://formspree.io/f/mgvydrqo" method="POST" class="space-y-6 text-left">
+                        <div>
+                            <label for="name" class="sr-only">Nombre</label>
+                            <input type="text" name="name" id="name" placeholder="Tu Nombre" class="w-full bg-gray-800/50 border-gray-700 border rounded-lg p-3 focus:ring-2 focus:ring-emerald-500 focus:outline-none transition-shadow">
+                        </div>
+                        <div>
+                            <label for="email" class="sr-only">Email</label>
+                            <input type="email" name="email" id="email" placeholder="Tu Email" class="w-full bg-gray-800/50 border-gray-700 border rounded-lg p-3 focus:ring-2 focus:ring-emerald-500 focus:outline-none transition-shadow">
+                        </div>
+                        <div>
+                            <label for="message" class="sr-only">Mensaje</label>
+                            <textarea name="message" id="message" rows="5" placeholder="Cuéntame sobre tu proyecto..." class="w-full bg-gray-800/50 border-gray-700 border rounded-lg p-3 focus:ring-2 focus:ring-emerald-500 focus:outline-none transition-shadow"></textarea>
+                        </div>
+                        <div class="text-center">
+                            <button type="submit" class="text-white font-semibold px-12 py-3 rounded-lg transform transition-all duration-300 btn-gradient">Enviar Mensaje</button>
+                        </div>
+                    </form>
+
+                    <div class="mt-16">
+                        <p class="mb-4">O encuéntrame en:</p>
+                        <div class="flex justify-center space-x-6">
+                            <a href="#" class="text-gray-400 hover:text-white transition-transform duration-300 hover:scale-110">
+                                <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M12 2C6.477 2 2 6.477 2 12c0 4.286 2.893 7.92 6.784 9.343.5.092.682-.217.682-.482 0-.237-.009-.868-.014-1.703-2.814.61-3.408-1.358-3.408-1.358-.455-1.156-1.11-1.465-1.11-1.465-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.11-4.555-4.942 0-1.091.39-1.984 1.03-2.682-.103-.253-.446-1.27.098-2.645 0 0 .84-.269 2.75 1.026A9.564 9.564 0 0112 6.82c.85.004 1.705.115 2.504.337 1.909-1.295 2.747-1.027 2.747-1.027.546 1.375.201 2.392.1 2.645.64.698 1.03 1.59 1.03 2.682 0 3.842-2.338 4.685-4.566 4.935.359.308.678.92.678 1.852 0 1.338-.012 2.419-.012 2.747 0 .268.18.578.688.482A10.001 10.001 0 0022 12c0-5.523-4.477-10-10-10z" clip-rule="evenodd" /></svg>
+                            </a>
+                            <a href="#" class="text-gray-400 hover:text-white transition-transform duration-300 hover:scale-110">
+                                <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" /></svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
-
-        <!-- Projects Section -->
-        <section id="projects" class="panel-container section-padding">
-            <h2 class="glow-cyan">Proyectos</h2>
-            <div class="content-grid project-grid">
-                <!-- Project 1 -->
-                <article class="panel project-item">
-                    <img src="images/PetSafe.png" alt="Project 1 Thumbnail"> <!-- <<< PROJECT IMAGE -->
-                    <h3>PetSafe</h3>
-                    <p>Aplicación destinada a la busqueda, notificación y adopcion de mascotas o animales de la calle, además de incorporar un mapa localizador de estos junto a locales pet-friendly y veterianarios.</p>
-                    <div class="project-links">
-                    <!--    <a href="#" target="_blank" class="btn">Live Demo</a> <<< PROJECT LINK -->
-                        <a href="https://github.com/eltitoborja/PetSafe" target="_blank" class="btn">GitHub</a> <!-- <<< PROJECT LINK -->
-                    </div>
-                </article>
-                <!-- Project 2 -->
-                <article class="panel project-item">
-                     <img src="placeholder-project.png" alt="Project 2 Thumbnail"> <!-- <<< PROJECT IMAGE -->
-                    <h3>Project Title 2</h3>
-                    <p>Another interesting project described concisely. Focus on the outcome.</p>
-                     <div class="project-links">
-                        <a href="#" target="_blank" class="btn">Live Demo</a> <!-- <<< PROJECT LINK -->
-                        <a href="#" target="_blank" class="btn">GitHub</a> <!-- <<< PROJECT LINK -->
-                    </div>
-                </article>
-                 <!-- Add more projects as needed -->
-            </div>
-        </section>
-
-        <!-- Contact Section -->
-        <section id="contact" class="panel-container section-padding">
-             <h2 class="glow-cyan">Contacto</h2>
-             <div class="panel">
-                <p>¿Tienes un proyecto en mente? ¡Hablemos!</p>
-                <form id="contact-form" action="https://formspree.io/f/mdkggvel" method="POST">
-                    <div class="form-group">
-                        <label for="name">Nombre:</label>
-                        <input type="text" id="name" name="name" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="email">Email:</label>
-                        <input type="email" id="email" name="_replyto" required>
-                    </div>
-                     <div class="form-group">
-                        <label for="message">Mensaje:</label>
-                        <textarea id="message" name="message" rows="4" required></textarea>
-                    </div>
-                    <button type="submit" class="btn btn-submit">Enviar Mensaje</button>
-                </form>
-                 <p id="form-status"></p> 
-             </div>
-        </section>
-
     </main>
 
-    <footer>
-        <!-- Social Links Section -->
-        <div class="social-links">
-            <a href="https://github.com/eltitoborja" target="_blank" aria-label="GitHub Profile"><i class="fab fa-github"></i></a> <!-- <<< YOUR LINK -->
-            <a href="https://linkedin.com/in/borja-pardo-juanes-130973335/" target="_blank" aria-label="LinkedIn Profile"><i class="fab fa-linkedin"></i></a> <!-- <<< YOUR LINK -->
-            <a href="https://instagram.com/_borjiita/" target="_blank" aria-label="Instagram Profile"><i class="fab fa-instagram"></i></a> <!-- <<< YOUR LINK -->
-            <a href="https://x.com/borjaft99" target="_blank" aria-label="X (Twitter) Profile"><i class="fa-brands fa-x-twitter"></i></a> <!-- <<< YOUR LINK -->
-        </div>
-        <p>© 2025 Borja Pardo Juanes. All rights reserved.</p>
+    <footer class="bg-transparent text-center py-6">
+        <p class="text-gray-500">&copy; 2024 Borja Pardo Juanes. Todos los derechos reservados.</p>
     </footer>
+   
+    <div id="form-message" class="fixed bottom-5 right-5 bg-gray-800 text-white p-4 rounded-lg shadow-lg opacity-0 transition-opacity duration-300 pointer-events-none"></div>
 
     <script src="script.js"></script>
 </body>
